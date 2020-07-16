@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, #f6d365, #c77d68);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+
+header {
+    font-size: 1.5rem;   
+}
+
+header, form {      /* CENTERING THE HEADER AND THE FORM Vertically and Horizontally */
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button { /* makes the input and button look nicer and like one unit */
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+}
+
+form button {
+    color: #c77d68;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: #c77d68;  
+    color: white;
+}
+
+.todo-container{
+    display: flex;  /* making everything in the container flexbox */ 
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.todo li{
+    flex: 1;  /* Makes the li element grow to take up as much of the space as possible and pushes the checkmark all the way to the right */
+}
+
+.trash-btn,
+.complete-btn{
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.complete-btn{
+    background: rgb(44, 211, 44)
+}
+
+.todo-item{
+    padding: 0rem 0.5rem;   /* Adds padding to the text of the todo item */
+}
+
+.fa-trash, .fa-check{
+    pointer-events: none; /* Can't click on the elements with these classes, which prevents not being able to delete an li if the icon is clicked on */
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {             /* Animate the li being deleted */
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+select {            /* Changes the appearance of the drop down select menu */
+    -webkit-appearance: none ;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select{        
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: #ff6f47;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem
+}
+
+.select::after{
+    content: "\25bc";       /* adds the arrow on the side of the drop down */
+    position: absolute;
+    background: #ff6f47;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    background: white;
+    color: #ff6f47;
+}
